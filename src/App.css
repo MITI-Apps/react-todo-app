@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 420px;
+  margin: 60px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* FORM + SEARCH */
+.form,
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+.item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #f1be32;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.3s;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.item input[type="checkbox"]:checked {
+  background-color: #f1be32;
+  border-color: #e2a60d;
+}
+.item input[type="checkbox"]:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  line-height: 20px;
+}
+/* BUTTONS */
+button {
+  padding: 10px 14px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: o.6;
+}
+/* LIST */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f3f5;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.item span {
+  flex: 1;
+}
+
+.item button {
+  background: #dc3545;
+}
+
+.item button:hover {
+  background: #a71d2a;
+}
+
+/* COMPLETED */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+/* filter container*/
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filters button {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.filters button:hover {
+  background: #ccc;
+}
+
+/* ACTIVE FILTER (we’ll use this next) */
+.filters .active {
+  background: #007bff;
+  color: white;
+}

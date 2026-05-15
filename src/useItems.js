@@ -50,6 +50,12 @@ const useItems = () => {
     setItems(newList);
   }
 
+  const toggleAll = () => {
+    const allComplete = items.every((item) => item.completed );
+    const newList = items.map((item) => ({...item, completed: !allComplete}));
+    setItems(newList);
+  };
+
   return {
     items,
     setItems,
@@ -61,7 +67,8 @@ const useItems = () => {
     editText,
     setEditText,
     saveEdit,
-    clearCompleted
+    clearCompleted,
+    toggleAll
   };
 };
 

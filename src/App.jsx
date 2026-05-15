@@ -21,7 +21,8 @@ function App() {
           editText,
           setEditText,
           saveEdit,
-          clearCompleted
+          clearCompleted,
+          toggleAll
   } = useItems();  
 
   const handleEditText = (e) => {
@@ -33,6 +34,7 @@ function App() {
     addItem(text);
     setText("");
   }
+  const allCompleted = items.length > 0 && items.every((item) => item.completed );
 
   return (
     <div className="container">
@@ -63,7 +65,7 @@ function App() {
           disabled={!items.some((item) => item.completed)}
           >Clear Completed ({items.filter((item) => item.completed).length})</button>
       </div>
-      <p>You typed: {text}</p> 
+      <button onClick={toggleAll}>{allCompleted ? "Unselect All" : "Select All" }</button>
       <ItemList 
         items={items}
         search={search}
